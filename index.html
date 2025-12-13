@@ -38,7 +38,19 @@
     </script>
 
     <style>
-      /* Custom styles for parallax or specific overlaps */
+      /* Prevent horizontal overflow on all devices */
+      html, body {
+        overflow-x: hidden;
+      }
+
+      /* Ensure responsive media sizing */
+      img, picture, video, iframe, svg {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Consolidated hero background (mobile-friendly) */
       .hero-bg {
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.6),
@@ -47,8 +59,10 @@
           url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop");
         background-size: cover;
         background-position: center;
-        background-attachment: fixed;
+        /* background-attachment: fixed can cause mobile issues */
+        background-attachment: scroll;
       }
+
       .stat-bg {
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.7),
@@ -58,21 +72,28 @@
         background-size: cover;
         background-position: center;
       }
+
       .service-icon:hover {
         color: #ff4500;
         transform: scale(1.1);
       }
+
+      /* If any absolutely positioned element extends outside, ensure it doesn't cause horizontal scroll
+         Many such accents are hidden on small screens (e.g., hidden md:block) but this extra rule helps. */
+      .max-w-7xl, .max-w-2xl, .max-w-4xl {
+        box-sizing: border-box;
+      }
     </style>
   </head>
   <body class="font-sans text-gray-800 antialiased overflow-x-hidden">
-    <nav
-      class="fixed w-full z-50 bg-black/90 backdrop-blur-sm text-white border-b border-gray-800"
+     <nav
+      class="fixed w-full z-50 bg-white/95 backdrop-blur-sm text-black border-b border-gray-200 shadow-sm transition-all duration-300"
     >
       <div
         class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
       >
         <div
-          class="text-2xl font-heading font-bold tracking-widest border-2 border-white p-1 px-3"
+          class="text-2xl font-heading font-bold tracking-widest border-2 border-black p-1 px-3 cursor-pointer"
         >
           MCR
         </div>
@@ -80,26 +101,60 @@
         <div
           class="hidden md:flex space-x-8 text-sm uppercase tracking-wide font-semibold"
         >
-          <a href="#" class="hover:text-brand-orange transition">Home</a>
-          <a href="project.html" class="hover:text-brand-orange transition"
+          <a href="index.html" class="hover:text-brand-orange transition"
+            >Home</a
+          >
+          <a href="service.html" class="hover:text-brand-orange transition"
+            >Services</a
+          >
+          <a href="project.html" class="text-brand-orange transition"
             >Projects</a
           >
-          <!-- <a href="#" class="hover:text-brand-orange transition">About</a> -->
+          <!-- <a href="#" class="hover:text-brand-orange transition">About Us</a> -->
           <a href="career.html" class="hover:text-brand-orange transition"
             >Careers</a
           >
-          <a href="#" class="hover:text-brand-orange transition">News</a>
+          <a href="contact.html" class="hover:text-brand-orange transition"
+            >Contact</a
+          >
         </div>
 
         <a
           href="#"
-          class="bg-brand-orange hover:bg-orange-600 text-white px-6 py-2 uppercase text-sm font-bold transition duration-300 transform hover:-translate-y-1"
+          class="bg-brand-orange hover:bg-orange-600 text-white px-6 py-2 uppercase text-sm font-bold transition duration-300 shadow-md hover:shadow-lg"
         >
-          Get a Quote
+          Call Now!
         </a>
       </div>
     </nav>
 
+    <div
+      id="mobile-menu"
+      class="hidden fixed top-16 left-0 w-full bg-black/95 z-40 p-4 md:hidden"
+    >
+      <div
+        class="flex flex-col space-y-4 text-center text-lg uppercase font-semibold"
+      >
+        <a
+          href="#"
+          class="block py-2 hover:text-brand-orange transition border-b border-gray-800"
+          >Home</a
+        >
+        <a
+          href="project.html"
+          class="block py-2 hover:text-brand-orange transition border-b border-gray-800"
+          >Projects</a
+        >
+        <a
+          href="career.html"
+          class="block py-2 hover:text-brand-orange transition border-b border-gray-800"
+          >Careers</a
+        >
+        <a href="#" class="block py-2 hover:text-brand-orange transition"
+          >News</a
+        >
+      </div>
+    </div>
     <header class="hero-bg h-screen flex items-center justify-start relative">
       <div
         class="max-w-7xl mx-auto px-6 w-full pt-20"
@@ -123,7 +178,7 @@
             Read More
           </a>
           <a
-            href="#"
+            href="project.html"
             class="border border-white text-white hover:bg-white hover:text-black px-8 py-3 uppercase font-bold tracking-wider transition duration-300"
           >
             Projects
@@ -554,9 +609,23 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        once: true, // Animations happen only once - while scrolling down
-        offset: 100, // Offset (in px) from the original trigger point
+        once: true,
+        offset: 100,
       });
+
+      // Mobile menu toggle - guard null (prevents errors if element missing)
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener("click", () => {
+
+
+
+
+
+
+</html>  </body>    </script>      }        });          mobileMenu.classList.toggle("hidden");      });
     </script>
   </body>
 </html>

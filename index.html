@@ -38,19 +38,7 @@
     </script>
 
     <style>
-      /* Prevent horizontal overflow on all devices */
-      html, body {
-        overflow-x: hidden;
-      }
-
-      /* Ensure responsive media sizing */
-      img, picture, video, iframe, svg {
-        max-width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      /* Consolidated hero background (mobile-friendly) */
+      /* Custom styles for parallax or specific overlaps */
       .hero-bg {
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.6),
@@ -59,10 +47,8 @@
           url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop");
         background-size: cover;
         background-position: center;
-        /* background-attachment: fixed can cause mobile issues */
-        background-attachment: scroll;
+        background-attachment: fixed;
       }
-
       .stat-bg {
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.7),
@@ -72,21 +58,19 @@
         background-size: cover;
         background-position: center;
       }
-
       .service-icon:hover {
         color: #ff4500;
         transform: scale(1.1);
       }
-
-      /* If any absolutely positioned element extends outside, ensure it doesn't cause horizontal scroll
-         Many such accents are hidden on small screens (e.g., hidden md:block) but this extra rule helps. */
-      .max-w-7xl, .max-w-2xl, .max-w-4xl {
-        box-sizing: border-box;
+      /* Ensure full responsiveness by removing fixed width/height where needed, though your existing structure looks generally good. */
+      .hero-bg {
+        /* Keep background-attachment: fixed for effect, but it can cause issues on some mobile browsers. */
+        background-attachment: scroll; /* Changed to scroll for better mobile compatibility */
       }
     </style>
   </head>
   <body class="font-sans text-gray-800 antialiased overflow-x-hidden">
-     <nav
+    <nav
       class="fixed w-full z-50 bg-white/95 backdrop-blur-sm text-black border-b border-gray-200 shadow-sm transition-all duration-300"
     >
       <div
@@ -107,7 +91,7 @@
           <a href="service.html" class="hover:text-brand-orange transition"
             >Services</a
           >
-          <a href="project.html" class="text-brand-orange transition"
+          <a href="project.html" class="hover:text-brand-orange transition"
             >Projects</a
           >
           <!-- <a href="#" class="hover:text-brand-orange transition">About Us</a> -->
@@ -120,7 +104,7 @@
         </div>
 
         <a
-          href="#"
+          href="contact.html"
           class="bg-brand-orange hover:bg-orange-600 text-white px-6 py-2 uppercase text-sm font-bold transition duration-300 shadow-md hover:shadow-lg"
         >
           Call Now!
@@ -609,23 +593,17 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        once: true,
-        offset: 100,
+        once: true, // Animations happen only once - while scrolling down
+        offset: 100, // Offset (in px) from the original trigger point
       });
 
-      // Mobile menu toggle - guard null (prevents errors if element missing)
+      // Simple JavaScript to toggle the mobile menu (optional, but necessary for the menu to work)
       const mobileMenuButton = document.getElementById("mobile-menu-button");
       const mobileMenu = document.getElementById("mobile-menu");
 
-      if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener("click", () => {
-
-
-
-
-
-
-</html>  </body>    </script>      }        });          mobileMenu.classList.toggle("hidden");      });
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
     </script>
   </body>
 </html>

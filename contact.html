@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MCR Construction - Contact Us</title>
+    <title>Contact Us</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -62,7 +62,6 @@
           <a href="project.html" class="hover:text-brand-orange transition"
             >Projects</a
           >
-          <!-- <a href="#" class="hover:text-brand-orange transition">About Us</a> -->
           <a href="career.html" class="hover:text-brand-orange transition"
             >Careers</a
           >
@@ -71,18 +70,63 @@
           >
         </div>
 
-        <a
-          href="contact.html"
-          class="bg-brand-orange hover:bg-orange-600 text-white px-6 py-2 uppercase text-sm font-bold transition duration-300 shadow-md hover:shadow-lg"
-        >
-          Call Now!
-        </a>
+        <div class="flex items-center space-x-4">
+          <a
+            href="contact.html"
+            class="bg-brand-orange hover:bg-orange-600 text-white px-6 py-2 uppercase text-sm font-bold transition duration-300 shadow-md hover:shadow-lg"
+          >
+            Call Now!
+          </a>
+
+          <button
+            id="mobile-menu-toggle"
+            class="md:hidden text-2xl text-black p-2"
+            aria-label="Toggle navigation menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
       </div>
     </nav>
 
+    <div
+      id="mobile-menu"
+      class="hidden fixed top-[72px] left-0 w-full bg-brand-dark/95 z-40 p-4 text-white md:hidden shadow-lg"
+    >
+      <div
+        class="flex flex-col space-y-4 text-center text-lg uppercase font-semibold"
+      >
+        <a
+          href="index.html"
+          class="block py-2 hover:text-brand-orange transition border-b border-gray-800"
+          >Home</a
+        >
+        <a
+          href="service.html"
+          class="block py-2 hover:text-brand-orange transition border-b border-gray-800"
+          >Services</a
+        >
+        <a
+          href="project.html"
+          class="block py-2 hover:text-brand-orange transition border-b border-gray-800"
+          >Projects</a
+        >
+        <a
+          href="career.html"
+          class="block py-2 hover:text-brand-orange transition border-b border-gray-800"
+          >Careers</a
+        >
+        <a
+          href="contact.html"
+          class="block py-2 hover:text-brand-orange transition"
+          >Contact</a
+        >
+      </div>
+    </div>
+
     <section class="pt-32 pb-24 bg-white">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-16" data-aos="fade-down">
+        <div class="mb-16 text-center md:text-left" data-aos="fade-down">
           <h6 class="text-black font-bold text-sm mb-2 tracking-wide">
             Contact Us
           </h6>
@@ -157,7 +201,7 @@
           </form>
 
           <div
-            class="h-[600px] w-full relative bg-gray-100"
+            class="h-96 w-full relative bg-gray-100 lg:h-full"
             data-aos="fade-left"
           >
             <img
@@ -240,11 +284,22 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      // Initialize AOS once with desired settings
       AOS.init({
-        once: true,
-        offset: 50,
+        once: true, // Animations happen only once - while scrolling down
+        offset: 100, // Offset (in px) from the original trigger point
         duration: 800,
       });
+
+      // Simple JavaScript to toggle the mobile menu
+      const mobileMenuButton = document.getElementById("mobile-menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuButton) {
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
     </script>
   </body>
 </html>

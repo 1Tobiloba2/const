@@ -42,10 +42,10 @@
       class="fixed w-full z-50 bg-white/95 backdrop-blur-sm text-black border-b border-gray-200 shadow-sm transition-all duration-300"
     >
       <div
-        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+        class="w-full mx-auto px-4 sm:px-6 py-4 flex justify-between items-center"
       >
         <div
-          class="text-2xl font-heading font-bold tracking-widest border-2 border-black p-1 px-3 cursor-pointer"
+          class="text-xl sm:text-2xl font-heading font-bold tracking-widest border-2 border-black p-1 px-3 cursor-pointer"
         >
           MCR
         </div>
@@ -62,7 +62,6 @@
           <a href="project.html" class="hover:text-brand-orange transition"
             >Projects</a
           >
-          <!-- <a href="#" class="hover:text-brand-orange transition">About Us</a> -->
           <a href="career.html" class="hover:text-brand-orange transition"
             >Careers</a
           >
@@ -71,92 +70,151 @@
           >
         </div>
 
-        <a
-          href="contact.html"
-          class="bg-brand-orange hover:bg-orange-600 text-white px-6 py-2 uppercase text-sm font-bold transition duration-300 shadow-md hover:shadow-lg"
-        >
-          Call Now!
-        </a>
+        <div class="flex items-center space-x-4">
+          <a
+            href="contact.html"
+            class="bg-brand-orange hover:bg-orange-600 text-white px-4 sm:px-6 py-2 uppercase text-xs sm:text-sm font-bold transition duration-300 shadow-md hover:shadow-lg"
+          >
+            Call Now!
+          </a>
+
+          <button
+            id="mobile-menu-toggle"
+            class="md:hidden text-2xl text-black p-2"
+            aria-label="Toggle navigation menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
       </div>
     </nav>
 
-    <header class="pt-32 pb-16 bg-white">
-      <div class="max-w-7xl mx-auto px-6" data-aos="fade-down">
+    <div
+      id="mobile-menu"
+      class="hidden fixed top-[72px] left-0 w-full bg-brand-dark/95 z-40 text-white md:hidden shadow-lg backdrop-blur-sm"
+    >
+      <div class="flex flex-col text-center text-lg uppercase font-semibold">
+        <a
+          href="index.html"
+          class="block py-4 hover:text-brand-orange transition border-b border-gray-800"
+          >Home</a
+        >
+        <a
+          href="service.html"
+          class="block py-4 hover:text-brand-orange transition border-b border-gray-800"
+          >Services</a
+        >
+        <a
+          href="project.html"
+          class="block py-4 hover:text-brand-orange transition border-b border-gray-800"
+          >Projects</a
+        >
+        <a
+          href="career.html"
+          class="block py-4 hover:text-brand-orange transition border-b border-gray-800"
+          >Careers</a
+        >
+        <a
+          href="contact.html"
+          class="block py-4 hover:text-brand-orange transition"
+          >Contact</a
+        >
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="pt-24 md:pt-32 pb-12 md:pb-16 bg-white">
+      <div class="w-full px-4 sm:px-6" data-aos="fade-down">
         <h6 class="text-black font-bold uppercase tracking-widest text-xs mb-4">
           Our Services
         </h6>
         <h1
-          class="text-4xl md:text-5xl font-heading font-bold text-brand-orange max-w-2xl leading-tight"
+          class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-brand-orange leading-tight"
         >
           We Offer a Range of Services to Meet Your Needs
         </h1>
       </div>
     </header>
 
-    <section class="py-16 border-t border-gray-100">
+    <!-- Service 1 -->
+    <section class="py-12 md:py-16 border-t border-gray-100">
       <div
-        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
       >
-        <div data-aos="fade-right">
+        <div class="order-2 md:order-1 px-4 sm:px-6" data-aos="fade-right">
           <div
-            class="text-brand-orange text-5xl font-heading font-bold mb-4 opacity-50"
+            class="text-brand-orange text-4xl md:text-5xl font-heading font-bold mb-4 opacity-50"
           >
             01
           </div>
-          <div class="mb-4 text-brand-orange text-3xl">
+          <div class="mb-4 text-brand-orange text-2xl md:text-3xl">
             <i class="fa-solid fa-compass-drafting"></i>
           </div>
-          <h3 class="text-3xl font-heading font-bold mb-6 text-black">
+          <h3
+            class="text-2xl md:text-3xl font-heading font-bold mb-4 md:mb-6 text-black"
+          >
             Pre-Construction
           </h3>
-          <p class="text-gray-600 mb-6 leading-relaxed">
+          <p
+            class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base"
+          >
             We lay the groundwork for success. Our pre-construction services
             involve detailed planning, cost estimation, and feasibility studies
             to ensure your project starts on the right foot.
           </p>
-          <ul class="text-sm text-gray-500 space-y-2">
+          <ul class="text-xs md:text-sm text-gray-500 space-y-1 md:space-y-2">
             <li>• Cost Estimation & Budgeting</li>
             <li>• Scheduling & Logistics</li>
             <li>• Value Engineering</li>
           </ul>
         </div>
-        <div class="h-[500px] w-full" data-aos="fade-left">
+        <div
+          class="order-1 md:order-2 h-64 sm:h-80 md:h-[500px] w-full"
+          data-aos="fade-left"
+        >
           <img
             src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop"
-            class="w-full h-full object-cover shadow-lg hover:grayscale transition duration-500"
+            class="w-full h-full object-cover"
+            alt="Pre-Construction Planning"
           />
         </div>
       </div>
     </section>
 
-    <section class="py-16 bg-brand-gray">
+    <!-- Service 2 -->
+    <section class="py-12 md:py-16 bg-brand-gray">
       <div
-        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
       >
-        <div class="order-2 md:order-1 h-[500px] w-full" data-aos="fade-right">
+        <div class="h-64 sm:h-80 md:h-[500px] w-full" data-aos="fade-right">
           <img
-            src="image/premium_photo-1681823643449-3c3d99541b0b.avif"
-            class="w-full h-full object-cover shadow-lg hover:grayscale transition duration-500"
+            src="image/premium_photo-1661499575649-e9d534f64ec9.avif"
+            class="w-full h-full object-cover"
+            alt="General Contracting"
           />
         </div>
-        <div class="order-1 md:order-2" data-aos="fade-left">
+        <div class="px-4 sm:px-6" data-aos="fade-left">
           <div
-            class="text-brand-orange text-5xl font-heading font-bold mb-4 opacity-50"
+            class="text-brand-orange text-4xl md:text-5xl font-heading font-bold mb-4 opacity-50"
           >
             02
           </div>
-          <div class="mb-4 text-brand-orange text-3xl">
+          <div class="mb-4 text-brand-orange text-2xl md:text-3xl">
             <i class="fa-solid fa-hammer"></i>
           </div>
-          <h3 class="text-3xl font-heading font-bold mb-6 text-black">
+          <h3
+            class="text-2xl md:text-3xl font-heading font-bold mb-4 md:mb-6 text-black"
+          >
             General Contracting
           </h3>
-          <p class="text-gray-600 mb-6 leading-relaxed">
+          <p
+            class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base"
+          >
             As your general contractor, we take full responsibility for the
             daily oversight of the construction site, management of vendors, and
             communication of information to all involved parties.
           </p>
-          <p class="text-gray-600">
+          <p class="text-gray-600 text-sm md:text-base">
             We ensure safety standards are met and timelines are strictly
             adhered to.
           </p>
@@ -164,61 +222,76 @@
       </div>
     </section>
 
-    <section class="py-16 bg-white">
+    <!-- Service 3 -->
+    <section class="py-12 md:py-16 bg-white">
       <div
-        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
       >
-        <div data-aos="fade-right">
+        <div class="order-2 md:order-1 px-4 sm:px-6" data-aos="fade-right">
           <div
-            class="text-brand-orange text-5xl font-heading font-bold mb-4 opacity-50"
+            class="text-brand-orange text-4xl md:text-5xl font-heading font-bold mb-4 opacity-50"
           >
             03
           </div>
-          <div class="mb-4 text-brand-orange text-3xl">
+          <div class="mb-4 text-brand-orange text-2xl md:text-3xl">
             <i class="fa-solid fa-clipboard-check"></i>
           </div>
-          <h3 class="text-3xl font-heading font-bold mb-6 text-black">
+          <h3
+            class="text-2xl md:text-3xl font-heading font-bold mb-4 md:mb-6 text-black"
+          >
             Construction Management
           </h3>
-          <p class="text-gray-600 mb-6 leading-relaxed">
+          <p
+            class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base"
+          >
             Our project managers coordinate and supervise the construction
             process from the conceptual development stage through final
             construction, making sure that the project gets done on time and
             within budget.
           </p>
         </div>
-        <div class="h-[500px] w-full" data-aos="fade-left">
+        <div
+          class="order-1 md:order-2 h-64 sm:h-80 md:h-[500px] w-full"
+          data-aos="fade-left"
+        >
           <img
             src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop"
-            class="w-full h-full object-cover shadow-lg hover:grayscale transition duration-500"
+            class="w-full h-full object-cover"
+            alt="Construction Management"
           />
         </div>
       </div>
     </section>
 
-    <section class="py-16 bg-brand-gray">
+    <!-- Service 4 -->
+    <section class="py-12 md:py-16 bg-brand-gray">
       <div
-        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
       >
-        <div class="order-2 md:order-1 h-[500px] w-full" data-aos="fade-right">
+        <div class="h-64 sm:h-80 md:h-[500px] w-full" data-aos="fade-right">
           <img
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
-            class="w-full h-full object-cover shadow-lg hover:grayscale transition duration-500"
+            class="w-full h-full object-cover"
+            alt="Design-Build"
           />
         </div>
-        <div class="order-1 md:order-2" data-aos="fade-left">
+        <div class="px-4 sm:px-6" data-aos="fade-left">
           <div
-            class="text-brand-orange text-5xl font-heading font-bold mb-4 opacity-50"
+            class="text-brand-orange text-4xl md:text-5xl font-heading font-bold mb-4 opacity-50"
           >
             04
           </div>
-          <div class="mb-4 text-brand-orange text-3xl">
+          <div class="mb-4 text-brand-orange text-2xl md:text-3xl">
             <i class="fa-solid fa-pen-ruler"></i>
           </div>
-          <h3 class="text-3xl font-heading font-bold mb-6 text-black">
+          <h3
+            class="text-2xl md:text-3xl font-heading font-bold mb-4 md:mb-6 text-black"
+          >
             Design-Build
           </h3>
-          <p class="text-gray-600 mb-6 leading-relaxed">
+          <p
+            class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base"
+          >
             A streamlined method where we handle both design and construction.
             This single-point responsibility minimizes risks for the project
             owner and reduces the delivery schedule by overlapping the design
@@ -228,60 +301,75 @@
       </div>
     </section>
 
-    <section class="py-16 bg-white">
+    <!-- Service 5 -->
+    <section class="py-12 md:py-16 bg-white">
       <div
-        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
       >
-        <div data-aos="fade-right">
+        <div class="order-2 md:order-1 px-4 sm:px-6" data-aos="fade-right">
           <div
-            class="text-brand-orange text-5xl font-heading font-bold mb-4 opacity-50"
+            class="text-brand-orange text-4xl md:text-5xl font-heading font-bold mb-4 opacity-50"
           >
             05
           </div>
-          <div class="mb-4 text-brand-orange text-3xl">
+          <div class="mb-4 text-brand-orange text-2xl md:text-3xl">
             <i class="fa-solid fa-users-gear"></i>
           </div>
-          <h3 class="text-3xl font-heading font-bold mb-6 text-black">
+          <h3
+            class="text-2xl md:text-3xl font-heading font-bold mb-4 md:mb-6 text-black"
+          >
             Site Management
           </h3>
-          <p class="text-gray-600 mb-6 leading-relaxed">
+          <p
+            class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base"
+          >
             Effective site management is the backbone of any safe construction
             project. We handle logistics, site security, waste management, and
             on-site personnel coordination to maintain a productive environment.
           </p>
         </div>
-        <div class="h-[500px] w-full" data-aos="fade-left">
+        <div
+          class="order-1 md:order-2 h-64 sm:h-80 md:h-[500px] w-full"
+          data-aos="fade-left"
+        >
           <img
             src="https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?q=80&w=1964&auto=format&fit=crop"
-            class="w-full h-full object-cover shadow-lg hover:grayscale transition duration-500"
+            class="w-full h-full object-cover"
+            alt="Site Management"
           />
         </div>
       </div>
     </section>
 
-    <section class="py-16 bg-brand-gray">
+    <!-- Service 6 -->
+    <section class="py-12 md:py-16 bg-brand-gray">
       <div
-        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
       >
-        <div class="order-2 md:order-1 h-[500px] w-full" data-aos="fade-right">
+        <div class="h-64 sm:h-80 md:h-[500px] w-full" data-aos="fade-right">
           <img
             src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=2070&auto=format&fit=crop"
-            class="w-full h-full object-cover shadow-lg hover:grayscale transition duration-500"
+            class="w-full h-full object-cover"
+            alt="Infrastructure"
           />
         </div>
-        <div class="order-1 md:order-2" data-aos="fade-left">
+        <div class="px-4 sm:px-6" data-aos="fade-left">
           <div
-            class="text-brand-orange text-5xl font-heading font-bold mb-4 opacity-50"
+            class="text-brand-orange text-4xl md:text-5xl font-heading font-bold mb-4 opacity-50"
           >
             06
           </div>
-          <div class="mb-4 text-brand-orange text-3xl">
+          <div class="mb-4 text-brand-orange text-2xl md:text-3xl">
             <i class="fa-solid fa-road"></i>
           </div>
-          <h3 class="text-3xl font-heading font-bold mb-6 text-black">
+          <h3
+            class="text-2xl md:text-3xl font-heading font-bold mb-4 md:mb-6 text-black"
+          >
             Infrastructure
           </h3>
-          <p class="text-gray-600 mb-6 leading-relaxed">
+          <p
+            class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base"
+          >
             From bridges to rail systems, our infrastructure team builds the
             connections that power modern life. We utilize heavy civil
             engineering expertise to deliver robust public works.
@@ -290,92 +378,110 @@
       </div>
     </section>
 
-    <section class="py-16 bg-white">
+    <!-- Service 7 -->
+    <section class="py-12 md:py-16 bg-white">
       <div
-        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
       >
-        <div data-aos="fade-right">
+        <div class="order-2 md:order-1 px-4 sm:px-6" data-aos="fade-right">
           <div
-            class="text-brand-orange text-5xl font-heading font-bold mb-4 opacity-50"
+            class="text-brand-orange text-4xl md:text-5xl font-heading font-bold mb-4 opacity-50"
           >
             07
           </div>
-          <div class="mb-4 text-brand-orange text-3xl">
+          <div class="mb-4 text-brand-orange text-2xl md:text-3xl">
             <i class="fa-solid fa-tree"></i>
           </div>
-          <h3 class="text-3xl font-heading font-bold mb-6 text-black">
+          <h3
+            class="text-2xl md:text-3xl font-heading font-bold mb-4 md:mb-6 text-black"
+          >
             Landscape Services
           </h3>
-          <p class="text-gray-600 mb-6 leading-relaxed">
+          <p
+            class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base"
+          >
             We don't just build buildings; we create environments. Our landscape
             architecture division ensures that the exterior spaces are as
             functional and beautiful as the interiors.
           </p>
         </div>
-        <div class="h-[500px] w-full" data-aos="fade-left">
+        <div
+          class="order-1 md:order-2 h-64 sm:h-80 md:h-[500px] w-full"
+          data-aos="fade-left"
+        >
           <img
-            src="https://images.unsplash.com/photo-1558618047-f4b511aae74d?q=80&w=2071&auto=format&fit=crop"
-            class="w-full h-full object-cover shadow-lg hover:grayscale transition duration-500"
+            src="image/premium_photo-1723489242223-865b4a8cf7b8.avif"
+            class="w-full h-full object-cover"
+            alt="Landscape Services"
           />
         </div>
       </div>
     </section>
 
-    <footer class="bg-black text-white py-16 border-t-4 border-brand-orange">
+    <!-- Footer -->
+    <footer
+      class="bg-black text-white py-12 md:py-16 border-t-4 border-brand-orange"
+    >
       <div
-        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12"
+        class="w-full px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
       >
         <div>
-          <h3 class="text-3xl font-heading font-bold mb-6">MCR</h3>
-          <p class="text-gray-500 text-sm">
+          <h3 class="text-2xl md:text-3xl font-heading font-bold mb-4 md:mb-6">
+            MCR
+          </h3>
+          <p class="text-gray-500 text-xs md:text-sm">
             Building the future, one brick at a time.
           </p>
         </div>
 
         <div>
-          <h5 class="font-bold uppercase tracking-wider mb-4 text-sm">
+          <h5 class="font-bold uppercase tracking-wider mb-3 md:mb-4 text-sm">
             Contact
           </h5>
-          <p class="text-gray-400 text-sm mb-2">500 Terry Francine Street</p>
-          <p class="text-gray-400 text-sm mb-2">San Francisco, CA 94158</p>
-          <p class="text-gray-400 text-sm">info@mysite.com</p>
+          <p class="text-gray-400 text-xs md:text-sm mb-2">
+            500 Terry Francine Street
+          </p>
+          <p class="text-gray-400 text-xs md:text-sm mb-2">
+            San Francisco, CA 94158
+          </p>
+          <p class="text-gray-400 text-xs md:text-sm">info@mysite.com</p>
         </div>
 
         <div>
-          <h5 class="font-bold uppercase tracking-wider mb-4 text-sm">
+          <h5 class="font-bold uppercase tracking-wider mb-3 md:mb-4 text-sm">
             Follow
           </h5>
-          <div class="flex space-x-4">
+          <div class="flex space-x-3 md:space-x-4">
             <a
               href="#"
               class="w-8 h-8 bg-gray-800 flex items-center justify-center rounded-full hover:bg-brand-orange transition"
-              ><i class="fa-brands fa-facebook-f"></i
+              ><i class="fa-brands fa-facebook-f text-xs md:text-sm"></i
             ></a>
             <a
               href="#"
               class="w-8 h-8 bg-gray-800 flex items-center justify-center rounded-full hover:bg-brand-orange transition"
-              ><i class="fa-brands fa-twitter"></i
+              ><i class="fa-brands fa-twitter text-xs md:text-sm"></i
             ></a>
             <a
               href="#"
               class="w-8 h-8 bg-gray-800 flex items-center justify-center rounded-full hover:bg-brand-orange transition"
-              ><i class="fa-brands fa-linkedin-in"></i
+              ><i class="fa-brands fa-linkedin-in text-xs md:text-sm"></i
             ></a>
           </div>
         </div>
 
         <div>
-          <h5 class="font-bold uppercase tracking-wider mb-4 text-sm">
+          <h5 class="font-bold uppercase tracking-wider mb-3 md:mb-4 text-sm">
             Newsletter
           </h5>
           <form class="flex flex-col gap-2">
             <input
               type="email"
               placeholder="Enter your email"
-              class="bg-gray-900 border border-gray-700 p-2 text-sm focus:outline-none focus:border-brand-orange text-white"
+              class="bg-gray-900 border border-gray-700 p-2 text-xs md:text-sm focus:outline-none focus:border-brand-orange text-white"
             />
             <button
-              class="bg-brand-orange text-white text-sm font-bold uppercase py-2 hover:bg-orange-600 transition"
+              class="bg-brand-orange text-white text-xs md:text-sm font-bold uppercase py-2 hover:bg-orange-600 transition"
             >
               Subscribe
             </button>
@@ -383,7 +489,7 @@
         </div>
       </div>
       <div
-        class="text-center pt-12 mt-12 border-t border-gray-800 text-gray-600 text-xs"
+        class="text-center pt-8 md:pt-12 mt-8 md:mt-12 border-t border-gray-800 text-gray-600 text-xs px-4"
       >
         &copy; 2035 by MCR Construction. Created with Tailwind CSS.
       </div>
@@ -391,10 +497,41 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      // Initialize AOS once with desired settings
       AOS.init({
         once: true,
-        offset: 100,
-        duration: 800,
+        offset: 50,
+        duration: 600,
+        delay: 100,
+      });
+
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuButton) {
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (event) => {
+        if (!mobileMenu.classList.contains("hidden")) {
+          if (
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+          ) {
+            mobileMenu.classList.add("hidden");
+          }
+        }
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
       });
     </script>
   </body>
